@@ -1,5 +1,6 @@
 # iRover
   ใช้สำหรับภาษา microPython ipst-WiFi + iKB <br>
+  ![](images/irover.jpg)  
   ### เริ่มต้น
   ```blocks
   from irover  import * 

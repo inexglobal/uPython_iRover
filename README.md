@@ -1,5 +1,5 @@
 # iRover
-  ใช้สำหรับภาษา microPython ipst-WiFi + iKB <br>
+  ใช้สำหรับภาษา microPython ประกอบด้วย ipst-WiFi และ  [https://inex.co.th/shop/ikb-1-board.html] (iKB) <br>
   ![](images/irover.jpg)  
   ### เริ่มต้น
   ```blocks

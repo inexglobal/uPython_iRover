@@ -1,5 +1,6 @@
 # iRover
   ใช้สำหรับภาษา microPython ipst-WiFi + iKB <br>
+  ## เริ่มต้น
   from irover  import * <br>
   i=IROVER() <br>
 # การระบุขาใช้งาน

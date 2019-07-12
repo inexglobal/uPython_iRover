@@ -2,7 +2,7 @@
   ใช้สำหรับภาษา microPython ipst-WiFi + iKB <br>
   
   from irover  import *<br>
-  i=IROVER();<br>
+  i=IROVER()<br>
 ## การระบุขาใช้งาน
 i0 - i7 เรียกใช้ pin บนบอร์ด iKB <br>
 ### ตัวอย่าง

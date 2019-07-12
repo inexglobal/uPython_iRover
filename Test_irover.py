@@ -1,6 +1,6 @@
 from irover  import *
 import time
-i=IROVER();
+i=IROVER()
 i.OK()
 i.sound(1000,1)
 i.fill(0)

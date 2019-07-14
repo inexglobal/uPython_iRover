@@ -1,5 +1,5 @@
 from irover  import *
-import time
+from time import sleep
 i=IROVER()
 i.OK()
 i.sound(1000,1)
@@ -23,11 +23,13 @@ i.sr(40)
 sleep(1) 
 i.tl(60) 	 
 sleep(1)                                       
-i.fd2(100,50) 	                                    
+i.fd2(100,50)
+sleep(1)
+i.ao()
 sleep(1) 
 i.bk2(55,50) 	                                       
 sleep(1) 
-i.stop()	 
+i.stop()
 while 1:
   valKnob=int(i.knob(0,255))
   i.fill(0)

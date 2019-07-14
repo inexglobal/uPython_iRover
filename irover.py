@@ -1,5 +1,3 @@
-
-
 from micropython import const
 from machine import ADC,Pin,I2C,PWM
 from time import sleep
@@ -368,8 +366,8 @@ class IROVER(SSD1306):
       self.i2c.writeto_mem(self.address,regL,sp1)
       self.i2c.writeto_mem(self.address,regR,sp0)
   def fd2(self,speed1,speed2):
-    spfd1=(int(speed1*-1)).to_bytes(1,'little')
-    spfd2=(int(speed2*-1)).to_bytes(1,'little')
+    spfd1=(int(speed1)).to_bytes(1,'little')
+    spfd2=(int(speed2)).to_bytes(1,'little')
     regL = 0x21
     regR = 0x22
     if self.con_ipstw==1:
@@ -385,13 +383,18 @@ class IROVER(SSD1306):
       self.i2c.writeto_mem(self.address,regR,spbk2)
   def stop(self):
     spbk1=(int(0)).to_bytes(1,'little')
-    
     regL = 0x21
     regR = 0x22
     if self.con_ipstw==1:
       self.i2c.writeto_mem(self.address,regL,spbk1)
       self.i2c.writeto_mem(self.address,regR,spbk1)
-
+  def ao(self):
+    spbk1=(int(0)).to_bytes(1,'little')
+    regL = 0x21
+    regR = 0x22
+    if self.con_ipstw==1:
+      self.i2c.writeto_mem(self.address,regL,spbk1)
+      self.i2c.writeto_mem(self.address,regR,spbk1)
 
 
 

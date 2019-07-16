@@ -198,6 +198,20 @@ class IROVER(SSD1306):
       val=ADC(Pin(port))
       val.atten(ADC.ATTN_11DB)
       return self.map(val.read(),0,4095,ostart,ostop)
+  def analog12(self,port,ostart=0,ostop=4095):
+    ports=str(port)
+    if ports[0]=='i':
+      port=int(ports[1])
+      if self.con_ipstw==1:
+        reg=0x80|(port<<4)
+        data = self.i2c.readfrom_mem(self.address,reg, 2)
+        value = (data[0] << 8 | data[1]) & 0x3ff
+        return self.map(value,0,1023,ostart,ostop)
+      return -1
+    else:
+      val=ADC(Pin(port))
+      val.atten(ADC.ATTN_11DB)
+      return self.map(val.read(),0,4095,ostart,ostop)
   def output(self,port,logic):
     
     if logic >1:
@@ -395,19 +409,3 @@ class IROVER(SSD1306):
     if self.con_ipstw==1:
       self.i2c.writeto_mem(self.address,regL,spbk1)
       self.i2c.writeto_mem(self.address,regR,spbk1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

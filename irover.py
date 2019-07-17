@@ -8,14 +8,14 @@ import neopixel
 import framebuf
 # MicroPython SSD1306 OLED driver, I2C and SPI interfaces
 import time
-i0=const('i0')
-i1=const('i1')
-i2=const('i2')
-i3=const('i3')
-i4=const('i4')
-i5=const('i5')
-i6=const('i6')
-i7=const('i7')
+i0='i0'
+i1='i1'
+i2='i2'
+i3='i3'
+i4='i4'
+i5='i5'
+i6='i6'
+i7='i7'
 currentBoard=""
 if(sys.platform=="esp8266"):
   currentBoard="esp8266"

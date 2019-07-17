@@ -8,17 +8,14 @@ import neopixel
 import framebuf
 # MicroPython SSD1306 OLED driver, I2C and SPI interfaces
 import time
-
-i0='i0'
-i1='i1'
-i2='i2'
-i3='i3'
-i4='i4'
-i5='i5'
-i6='i6'
-i7='i7'
-
-
+i0=const('i0')
+i1=const('i1')
+i2=const('i2')
+i3=const('i3')
+i4=const('i4')
+i5=const('i5')
+i6=const('i6')
+i7=const('i7')
 currentBoard=""
 if(sys.platform=="esp8266"):
   currentBoard="esp8266"
@@ -42,7 +39,6 @@ SET_DISP_CLK_DIV    = const(0xd5)
 SET_PRECHARGE       = const(0xd9)
 SET_VCOM_DESEL      = const(0xdb)
 SET_CHARGE_PUMP     = const(0x8d)
- 
 class SSD1306:
   def __init__(self, width, height, external_vcc):
     self.width = width
@@ -120,7 +116,7 @@ class SSD1306:
     self.framebuf.fill_rect(x, y, w, h, col)
   def blit(self, fbuf, x, y):
     self.framebuf.blit(fbuf, x, y)
-    
+ 
 class IROVER(SSD1306):
   def __init__(self,i2c=I2C(scl=Pin(22), sda=Pin(21), freq=1000000),address = const(0x48),width=128, height=64,addr=0x3c, external_vcc=False):
     self.addr = addr
